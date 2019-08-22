@@ -1,6 +1,8 @@
 package com.zhiyou.springboot7mybatis.pojo;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable {
 
     /**
      * 城市编号

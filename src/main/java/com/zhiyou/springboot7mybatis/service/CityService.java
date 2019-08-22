@@ -11,4 +11,11 @@ public interface CityService {
      */
 
     City findCityByName(String cityName);
+
+    /**
+     * 根据城市 ID,查询城市信息
+     *
+     * @param id
+     */
+    City findCityById(Long id);
 }

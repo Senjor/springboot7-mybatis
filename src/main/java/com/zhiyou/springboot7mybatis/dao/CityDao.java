@@ -1,13 +1,10 @@
 package com.zhiyou.springboot7mybatis.dao;
 
 import com.zhiyou.springboot7mybatis.pojo.City;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
-
-
-@Repository
+@Mapper
 public interface CityDao {
 
 
@@ -17,4 +14,11 @@ public interface CityDao {
      * @param cityName 城市名
      */
     City findByName(@Param("cityName") String cityName);
+
+    /**
+     * 根据城市id，查询城市信息
+     *
+     * @param id 城市id
+     */
+    City findById(Long id);
 }

@@ -11,10 +11,7 @@ import com.zhiyou.springboot7mybatis.pojo.City;
 import com.zhiyou.springboot7mybatis.service.CityService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -27,5 +24,12 @@ public class CityController {
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
         return cityService.findCityByName(cityName);
     }
+
+
+    @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
+    public City findOneCity(@PathVariable("id") Long id) {
+        return cityService.findCityById(id);
+    }
+
 
 }
